@@ -1,0 +1,39 @@
+<?php
+
+// Exit if accessed directly.
+if (!defined('APP_PATH')) {
+    die('Direct access is not allowed.');
+}
+
+return [
+    'database' => [
+        'host' => 'localhost',
+        'username' => 'db_user',
+        'password' => 'db_password',
+        'dbname' => 'building_charge_manager',
+        'charset' => 'utf8mb4'
+    ],
+    'app' => [
+        'name' => 'BuildingChargeManager',
+        'base_url' => 'http://localhost/building-charge-manager/public', // Change this to your domain
+        'debug' => true, // Set to false in production
+        'default_timezone' => 'Asia/Tehran',
+    ],
+    'security' => [
+        'csrf_secret' => 'YOUR_RANDOM_CSRF_SECRET_KEY_HERE',
+        'session_name' => 'BCM_SESS',
+    ],
+    'notifications' => [
+        'telegram' => [
+            'bot_token' => 'YOUR_TELEGRAM_BOT_TOKEN',
+            'chat_id' => 'YOUR_TELEGRAM_CHAT_ID',
+        ],
+        'sms' => [
+            'api_key' => 'YOUR_SMS_API_KEY',
+            'sender' => 'YOUR_SMS_SENDER_NUMBER',
+        ],
+        'whatsapp' => [
+            'api_key' => 'YOUR_WHATSAPP_BUSINESS_API_KEY',
+        ],
+    ]
+];
