@@ -1,8 +1,8 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Set the base path for the rewrite rules.
-    RewriteBase /sharj/public/
+    # Set the RewriteBase to the subdirectory where the application is located
+    RewriteBase /sharj/
 
     # Handle Front Controller
     RewriteCond %{REQUEST_FILENAME} !-f
