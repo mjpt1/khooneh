@@ -1,10 +1,12 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # Set the RewriteBase to the subdirectory where the application is located
-    RewriteBase /sharj/
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
 
-    # Handle Front Controller
+    # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^ index.php [L]
