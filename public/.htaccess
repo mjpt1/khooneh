@@ -1,5 +1,6 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    RewriteBase /sharj/
 
     # Redirect trailing slashes to non-trailing slashes
     RewriteCond %{REQUEST_FILENAME} !-d
