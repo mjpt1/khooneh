@@ -1,9 +1,6 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
-    # If the request is not for a file or directory that exists in the root,
-    # then rewrite the request to the /public directory.
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
+    # Silently rewrite all requests to the /public directory
     RewriteRule ^(.*)$ public/$1 [L]
 </IfModule>
