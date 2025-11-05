@@ -1,12 +1,11 @@
 <IfModule mod_rewrite.c>
+    Options -MultiViews
     RewriteEngine On
 
-    # Redirect Trailing Slashes If Not A Folder...
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_URI} (.+)/$
-    RewriteRule ^ %1 [L,R=301]
+    # Set the RewriteBase to the subdirectory
+    RewriteBase /sharj/
 
-    # Handle Front Controller...
+    # Handle Front Controller
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^ index.php [L]
